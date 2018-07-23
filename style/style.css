@@ -24,6 +24,9 @@
 	width: 100%;
 	table-layout: :fixed;
 }
+.fixedTable tbody{
+	border:1px solid #aaa;
+}
 
 .fixedTable tr td, .fixedTable tr th{
 	padding: 10px;
@@ -35,4 +38,7 @@
 
 .fixedTable tbody tr:nth-child(even){
 	background: #fff;
+}
+.text-center{
+	text-align: center;
 }
