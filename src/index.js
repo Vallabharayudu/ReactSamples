@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
 import FirstSample from './components/FirstSample';
+import FormSample from './components/FormSample';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -14,6 +15,7 @@ ReactDOM.render(
     <div>
     <App />
     <FirstSample/>
+    <FormSample/>
     </div>
   </Provider>
   , document.querySelector('.container'));

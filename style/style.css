@@ -1,4 +1,38 @@
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.clear{
+	clear:both;
+}
+
+.oneByTwoLeftSec{
+	width: 48%;
+	margin-right:2%; 
+}
+.oneByTwoRightSec{
+	width: 48%;
+	margin-left:2%; 
+}
 .eachSampleContainer{
 	padding: 10px;
 	border:1px solid #aaa;
+}
+.fixedTable{
+	width: 100%;
+	table-layout: :fixed;
+}
+
+.fixedTable tr td, .fixedTable tr th{
+	padding: 10px;
+}
+
+.fixedTable tbody tr:nth-child(odd){
+	background: #f9f9f9;
+}
+
+.fixedTable tbody tr:nth-child(even){
+	background: #fff;
 }
