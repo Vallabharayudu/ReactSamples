@@ -22,14 +22,14 @@ export default class FirstSample extends React.Component {
 
   	//Assign the form value to other variable 
   	this.state.newName = this.state.name;
-  	
+
     return (
     <div>
     	<h2>Form Change Sample</h2>
     	<div class="eachSampleContainer">
       		<input type='text' placeholder='Please Enter Name' value={this.state.name} onChange={this.handleChange} />
-      		<div>Old Name:{this.state.name}</div>
-      		<div>new Name:{this.state.newName}</div>
+      		<div><b>Old Name: </b>{this.state.name}</div>
+      		<div><b>New Name: </b>{this.state.newName}</div>
       	</div>
     </div>
     );
