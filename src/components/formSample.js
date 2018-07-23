@@ -38,25 +38,26 @@ export default class FormSample extends React.Component {
 	    });
   };
 
-  changeStatevalue(){
+  changeStatevalue(event){
     this.setState({
       selectedValue: event.target.value
     });
-    console.log(this.state.selectedValue);
   }
 
   getName(){
     console.log(this.state.selectedValue);
   	this.setState({
-  		filledDetails : [{
-        fullName :this.state.firstName+' ' + this.state.middleName +' '+ this.state.lastName,
-        stateName : this.state.selectedValue
-      }],
-
+  		
+      filledDetails : this.state.filledDetails.concat(
+        {
+          fullName :this.state.firstName+' ' + this.state.middleName +' '+ this.state.lastName,
+          stateName : this.state.selectedValue
+        }
+      ),
       firstName:'',
       middleName:'',
       lastName:'',
-      //selectedValue:''
+      selectedValue:''
   	})
   }
 
@@ -65,7 +66,7 @@ export default class FormSample extends React.Component {
   		firstName:'',
 		  middleName:'',
 		  lastName:'',
-      //selectedValue:''
+      selectedValue:''
   	})
   }
 
@@ -76,11 +77,11 @@ export default class FormSample extends React.Component {
   	//Assign the form value to other variable 
   	//this.state.newName = this.state.name;
     console.log(this.state.filledDetails);
-
+    const isLoggedIn = this.state.isLoggedIn;
 
     const rowItems = this.state.filledDetails.map((item,index) =>
       <tr>
-        <td>{item.index}</td>
+        <td>{index}</td>
         <td>{item.fullName}</td>
         <td>{item.stateName}</td>
       </tr>
@@ -100,7 +101,7 @@ export default class FormSample extends React.Component {
                 <option value="karnataka">karnataka</option>
               </select>
           </div>
-
+          <div>Value: {this.state.selectedValue}</div>
       		<button onClick={this.getName}>Get Full Name</button>&nbsp;
       		<button onClick={this.clearFields}>Cancel</button>
       	</div>
@@ -115,7 +116,8 @@ export default class FormSample extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                  {rowItems}
+              {this.state.filledDetails.length ? rowItems : <tr><td colspan="2">No data filled</td></tr>}
+                  
               </tbody> 
             </table>
         </div>
