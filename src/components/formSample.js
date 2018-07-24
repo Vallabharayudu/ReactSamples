@@ -81,7 +81,7 @@ export default class FormSample extends React.Component {
 
     const rowItems = this.state.filledDetails.map((item,index) =>
       <tr>
-        <td>{index}</td>
+        <td>{index+1}</td>
         <td>{item.fullName}</td>
         <td>{item.stateName}</td>
       </tr>
@@ -116,7 +116,7 @@ export default class FormSample extends React.Component {
                 </tr>
               </thead>
               <tbody>
-              {this.state.filledDetails.length ? rowItems : <tr><td colspan="3" className="text-center">No data filled</td></tr>}
+              {this.state.filledDetails.length ? rowItems : <tr><td colSpan="3" className="text-center">No data filled</td></tr>}
                   
               </tbody> 
             </table>
