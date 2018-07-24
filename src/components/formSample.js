@@ -76,7 +76,7 @@ export default class FormSample extends React.Component {
 
   	//Assign the form value to other variable 
   	//this.state.newName = this.state.name;
-    console.log(this.state.filledDetails);
+    //console.log(this.state.filledDetails);
     const isLoggedIn = this.state.isLoggedIn;
 
     const rowItems = this.state.filledDetails.map((item,index) =>
