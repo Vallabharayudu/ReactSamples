@@ -121,6 +121,7 @@ export default class FormSample extends React.Component {
               </tbody> 
             </table>
         </div>
+        <div className="clear"></div>
     </div>
     );
   }
