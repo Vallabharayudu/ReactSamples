@@ -88,7 +88,7 @@ export default class FormSample extends React.Component {
     );
     return (
     <div>
-    	<h2>Get Full Details from Form</h2>
+    	<h3 className="text-center"><u>Get Full Details from Form</u></h3>
     	<div className="left eachSampleContainer oneByTwoLeftSec">
       		<div><b>First name: </b> <input type='text' placeholder='Please Enter Name' value={this.state.firstName} onChange={this.handleFirstnameChange} /></div>
       		<div><b>Middle name: </b> <input type='text' placeholder='Please Enter Name' value={this.state.middleName} onChange={this.handleMiddlenameChange} /></div>

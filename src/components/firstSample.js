@@ -25,7 +25,7 @@ export default class FirstSample extends React.Component {
 
     return (
     <div>
-    	<h2>Form Change Sample</h2>
+      <h3 className="text-center"><u>Form Change Sample</u></h3>
     	<div className="eachSampleContainer">
       		<input type='text' placeholder='Please Enter Name' value={this.state.name} onChange={this.handleChange} />
       		<div><b>Old Name: </b>{this.state.name}</div>

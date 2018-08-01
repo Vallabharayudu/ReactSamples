@@ -19,6 +19,7 @@
 .eachSampleContainer{
 	padding: 10px;
 	border:1px solid #aaa;
+	margin-bottom: 20px;
 }
 .fixedTable{
 	width: 100%;

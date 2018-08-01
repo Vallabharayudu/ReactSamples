@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from "jquery";
+import AjaxSelectedDetails from './ajaxSelectedDetails';
 
 export default class AjaxSample extends React.Component{
 
@@ -9,9 +10,10 @@ export default class AjaxSample extends React.Component{
 			listOfContacts:[],
 			enablemodal:false,
 			selectedDeatils:[],
-			selectedCompanyDetails:[]
+			name:'Vallabha rayudu'
 		}
 	}
+  
 
 	componentDidMount(){
 		$.ajax({
@@ -30,13 +32,11 @@ export default class AjaxSample extends React.Component{
 		//console.log('Clicked Item: '+item);
 		console.log('Clicked Item Id: '+index);
 		this.setState({
-			selectedDeatils:this.state.listOfContacts[index],
-			selectedCompanyDetails:this.state.listOfContacts[index].company
+			enablemodal:true,
+			selectedDeatils:this.state.listOfContacts[index]
 		},()=>{
 			console.log('Pushed Item',this.state.selectedDeatils);
-			console.log('Pushed Company',this.state.selectedCompanyDetails);
 		});
-		console.log('selected Item',this.state.listOfContacts[index]);
 		
 	}
 
@@ -54,9 +54,10 @@ export default class AjaxSample extends React.Component{
 
 		return (
 			<div className="eachSampleContainer">
-				
+				<h3 className="text-center"><u>Fill Ajax data in table and on row click events</u></h3>
 				<div className="left oneByTwoLeftSec">
-					<div className="headerText">Ajax Data</div>
+					<div className="headerText">Ajax Data In Parent Page</div>
+					<div style={{height:300,overflowY:'auto'}}>
 					<table className="fixedTable">
 						<thead>
 							<tr>
@@ -70,34 +71,15 @@ export default class AjaxSample extends React.Component{
 							{this.state.listOfContacts.length ? listOfItems : <tr><td colSpan="4" className="text-center">No records found</td></tr>}
 						</tbody>
 					</table>
+					</div>
 				</div>
 
 				<div className="left oneByTwoLeftSec">
-					<div className="headerText">Clicked Item details</div>
-					<table className="fixedTable">
-						<tbody>
-							<tr>
-								<th>Name</th>
-								<td>{this.state.selectedDeatils.name}</td>
-							</tr>
-							<tr>
-								<th>User Name</th>
-								<td>{this.state.selectedDeatils.username}</td>
-							</tr>
-							<tr>
-								<th>Phone</th>
-								<td>{this.state.selectedDeatils.phone}</td>
-							</tr>
-							<tr>
-								<th>Website</th>
-								<td>{this.state.selectedDeatils.website}</td>
-							</tr>
-							<tr>
-								<th>Company Name</th>
-								<td>{this.state.selectedCompanyDetails.name}</td>
-							</tr>
-						</tbody>
-					</table>
+					<div className="headerText">Clicked Item details from Parent</div>
+						
+						{/**Below is the children and getting data from same page only on click of table row from the ajax data**/}
+						<AjaxSelectedDetails  passedValue={this.state.selectedDeatils ? this.state.selectedDeatils:''} />
+					
 				</div>
 
 				<div className="clear"></div>
