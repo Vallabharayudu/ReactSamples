@@ -26,7 +26,7 @@ export default class Parent extends React.Component{
 
 				<div className="left oneByTwoLeftSec">
 					<h5>Child elements</h5>
-					<Child sendData={this.updataParentData}/>
+					<Child sendData={this.updataParentData} passedData='Hello'/>
 				</div>
 				<div className="clear"></div>
 			</div>
@@ -59,6 +59,7 @@ class Child extends React.Component{
 			<div>
 				<input type="text" value={this.state.name} onChange={this.onChangeField} ref='nameChange'/>
 				<button onClick={this.submit}>Submit</button>
+				<div>{this.props.passedData}</div>
 			</div>
 			);
 	}

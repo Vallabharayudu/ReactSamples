@@ -61,6 +61,23 @@ class Child extends React.Component{
 			<div>
 				<b>Parent data in Child Componenet Name:</b>{this.props.value.name}<br/>
 				<b>Parent data in Child Componenet Designation:</b>{this.props.value.designation}<br/>
+				<SubChild childValue={this.props.value} />
+			</div>
+			);
+	}
+
+}
+
+class SubChild extends React.Component{
+	constructor(props){
+		super(props);
+	}
+
+	render(){
+		return(
+			<div>
+				<b>Parent data in Sub Child Componenet Name:</b>{this.props.childValue.name}<br/>
+				<b>Parent data in Sub Child Componenet Designation:</b>{this.props.childValue.designation}<br/>
 			</div>
 			);
 	}
