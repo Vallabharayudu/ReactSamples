@@ -4,24 +4,22 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
-import FirstSample from './components/firstSample';
-import FormSample from './components/formSample';
-import AjaxSample from './components/ajaxSample';
-import ParentToChild from './components/parentToChild';
-import ChildToParent from './components/childToParent';
+import Routers from './components/router';
+//import JsonLearn from './components/jsonLearn';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <div>
-    <App />
-    <ChildToParent />
-    <ParentToChild />
-    <FirstSample/>
-    <FormSample/>
-    <AjaxSample />
+    <div className="row">
+      <div className="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+          <App />
+      </div>
+      <div className="col-md-9 col-lg-9 col-sm-8 col-xs-12">
+          <Routers/>
+      </div>
+      <div className="clearfix"></div>
     </div>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.container-fluid'));
