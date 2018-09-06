@@ -12,6 +12,7 @@ export default class App extends Component {
           <li><a href="/parentToChild">parentToChild</a></li>
           <li><a href="/childToParent">childToParent</a></li>
           <li><a href="/objectUpdate">objectInlineUpdate</a></li>
+          <li><a href="/reduxSample">Redux Sample Without Action</a></li>
        	</ul>
       </div>
     );
