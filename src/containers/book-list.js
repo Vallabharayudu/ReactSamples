@@ -15,7 +15,7 @@ class BookList extends Component{
 	}
 
 	render(){
-
+		console.log('Form fillded data :',this.props.forms);
 		return(
 			<div>
 			<h3 className="text-center"><u>Book List</u></h3>
@@ -30,7 +30,8 @@ class BookList extends Component{
 function mapStateToProps(state){
 	//what ever returned will show up as props
 	return{
-		books:state.books
+		books:state.books,
+		forms:state.forms
 	};
 }
 

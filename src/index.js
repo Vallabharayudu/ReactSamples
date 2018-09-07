@@ -7,8 +7,9 @@ import App from './components/app';
 import Routers from './components/router';
 //import JsonLearn from './components/jsonLearn';
 import reducers from './reducers';
+import ReduxPromise from 'redux-promise';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
