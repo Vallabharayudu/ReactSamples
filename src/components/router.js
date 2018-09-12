@@ -7,7 +7,9 @@ import ParentToChild from './parentToChild';
 import ChildToParent from './childToParent';
 import ObjectInlineUpdate from './objectUpdate';
 import ReduxSample from './reduxSample';
-import ReduxWithAction from './reduxWithAction'
+import ReduxWithAction from './reduxWithAction';
+import Employees from './emp-list';
+import EmployeeDetail from './emp-detail';
 
 export default class Routers extends Component{
 
@@ -26,6 +28,8 @@ export default class Routers extends Component{
                   <Route exact path='/objectUpdate' component={ObjectInlineUpdate}/>
                   <Route exact path='/reduxSample' component={ReduxSample}/>
                   <Route exact path='/reduxWithAction' component={ReduxWithAction}/>
+                  <Route exact path='/emp-list' component={Employees}/>
+                  <Route exact path='/emp-detail/:id' component={EmployeeDetail}/>
                </Switch>
             </div>
          </Router>

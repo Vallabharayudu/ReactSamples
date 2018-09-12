@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 
 
 export default class App extends Component {
+  constructor(props){
+    super(props);
+  }
 componentDidMount(){
 
 }
 
   render() {
+   // var currentLocation = this.context.location.pathname;
+    console.log(this.props.history);
     return (
       <nav className="navbar navbar-default navbar-static-top">
         <div className="container-fluid">
@@ -35,6 +40,7 @@ componentDidMount(){
                             <li><a href="/ReduxWithAction">Redux With Action</a></li>
                         </ul>
                     </li>
+                    <li><a href="/emp-list">Employess</a></li>
               </ul>
           </div>
         </div>
